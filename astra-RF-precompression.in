@@ -1,0 +1,178 @@
+&NEWRUN
+ HEAD='TEX single bunch on crest',
+ RUN=1          ,
+ LOOP=F,
+ NLOOP=1          ,
+ DISTRIBUTION='dstr_file                                         ',
+ LMAGNETIZED=F,
+ EMITS=T,
+ PHASES=T,
+ TRACKS=T,
+ REFS=T,
+ TCHECKS=T,
+ LSUB_COR=F,
+ TRACK_ALL=T,
+ TRACK_ON_AXIS=F,
+ PHASE_SCAN=F,
+ AUTO_PHASE=T,
+ CHECK_REF_PART=F,
+ L_RM_BACK=F,
+ Z_MIN= -100.000000    ,
+ CATHODES=T,
+ XYRMS= -1.00000000    ,
+ TRMS= -1.00000000    ,
+ ZOFF=  0.00000000    ,
+ XOFF=  0.00000000    ,
+ YOFF=  0.00000000    ,
+ ZSTART=  0.00000000    ,
+ !ZSTOP=  2.4000000    ,
+ ZSTOP=  2.2000000    ,
+ ZPHASE=1          ,
+ H_MAX=  1.00000005E-03,
+ H_MIN=  0.00000000    ,
+ HIGH_RES=F,
+ MAX_STEP=100000     ,
+ LMONITOR=F,
+ DEBUNCH=  0.00000000    ,
+ N_RED=1          ,
+ QBUNCH=  0.00000000    ,
+ LANDFS=F,
+ ZEMIT=260       ,
+ /
+&OUTPUT
+ LOCAL_EMIT=F,
+ LANDFS=F,
+ ZEMIT=1150      ,
+ ZPHASE=1          ,
+c_emits=t,
+ REFS=T,
+ PHASES=T,
+ EMITS=T,
+ PHIS=F,
+ SCREEN= 1.2, 1.4, 1.6, 1.8, 2.0,
+ SCR_XROT= 499*0.0000000000000000       ,
+ SCR_YROT= 499*0.0000000000000000       ,
+ ZSTART=  0.00000000    ,
+ !ZSTOP= 2.4    ,
+ ZSTOP= 2.2    ,
+ /
+&SCAN
+ LSCAN=F,
+ S_MIN=-90          ,
+ S_MAX=-60          ,
+ S_NUMB=10          ,
+ SCAN_PARA='PHI(2)',
+ FOM(1)='bunch length'
+ FOM(2)='rms energy spread'       
+ FOM(3)='mean energy'                                                                                                                                                                        
+ FOM(4)='longitudinal emittance'    
+ /
+&MODULES
+/
+&ERROR
+/
+&CHARGE
+ NRAD=12         ,
+ NLONG_IN=20         ,
+ MAX_COUNT=100        ,
+ LOOP=F,
+ LSPCH=T,
+ LMIRROR=T,
+ CELL_VAR=  2.20000005    ,
+ MIN_GRID=  0.00000000    ,
+ N_MIN=30         ,
+ MAX_SCALE= 0.100000001    ,
+ LSPCH3D=F,
+ L2D_3D=F,
+ Z_TRANS=  1.39999998    ,
+ MIN_GRID_TRANS=  0.00000000    ,
+ NXF=32         ,
+ NX0=2          ,
+ NYF=32         ,
+ NY0=2          ,
+ NZF=64         ,
+ NZ0=2          ,
+ SMOOTH_X=2          ,
+ SMOOTH_Y=2          ,
+ SMOOTH_Z=2          ,
+ /
+&CSR
+/
+&APERTURE
+ LOOP=F,
+ LAPERT=f,
+ FILE_APERTURE= 2*'RAD                                               ', 3*'                                                  ',
+ AP_Z1=  1.24900007    ,  1.34899998    , 3*0.00000000      ,
+ AP_Z2=  1.25100005    ,  1.35099995    , 3*0.00000000      ,
+ AP_R= 5*4.00000000      ,
+ A_POS= 5*0.00000000      ,
+ A_XOFF= 5*0.00000000      ,
+ A_YOFF= 5*0.00000000      ,
+ /
+&FEM
+/
+!460 cm
+!111.65 52 mm verso gun
+!35mv/m
+!160
+
+&CAVITY
+ LOOP=F,
+ LEFIELD=T,
+ FILE_EFIELD='C_Band_2_5_cells_gun.dat                          ', 4*'TWS_Cband.dat                                     ', 95*'                                                  ',
+ NUE= 2*5.71199989      , 95*0.00000000      ,
+ MAXE=  160.000000    , 1*43     , 95*0.00000000      ,
+ PHI=  0.00000000    ,  -1.00000E+00, -93.87   , 2*-0.300000012    ,
+  95*0.00000000      ,
+ C_POS=  0.00000000    ,  1.294    ,  6.15000010    ,  6.53999996    ,  8.93500042    ,
+  95*0.00000000      ,
+ C_XOFF= 100*0.00000000      ,
+ C_YOFF= 100*0.00000000      ,
+ C_NUMB=0          , 4*27        , 15*0          ,
+ C_SMOOTH= 20*0          ,
+ C_XROT= 100*0.00000000      ,
+ C_YROT= 100*0.00000000      ,
+ /
+&SOLENOID
+ LOOP=F,
+ LBFIELD=T,
+ FILE_BFIELD='solCband_astra_ASTRA.txt                          ','C_Band_TW2mlong_SOL.poi                           ', 38*'                                                  ',
+ MAXB= 0.375    ,  0.0E-02, 38*0.00000000      ,
+ S_POS= 0.191000000    ,  2.72000003    , 38*0.00000000      ,
+ S_XOFF= 40*0.00000000      ,
+ S_YOFF= 40*0.00000000      ,
+ S_SMOOTH= 40*0          ,
+ S_XROT= 40*0.00000000      ,
+ S_YROT= 40*0.00000000      ,
+ S_NOSCALE= 40*F,
+ /
+&QUADRUPOLE
+ LOOP=F,
+ LQUAD=F,
+ Q_LENGTH= 16*0.00000000      ,
+ Q_K= 16*0.00000000      ,
+ Q_GRAD= 16*0.00000000      ,
+ Q_POS= 16*0.00000000      ,
+ Q_XOFF= 16*0.00000000      ,
+ Q_YOFF= 16*0.00000000      ,
+ Q_XROT= 16*0.00000000      ,
+ Q_YROT= 16*0.00000000      ,
+ Q_BORE= 16*0.00000000      ,
+ Q_RAD= 16*0.200000003     ,
+ Q_NOSCALE= 16*F,
+ /
+&DIPOLE
+ LDIPOLE=F,
+ D_TYPE= 16*'   ',
+ D1= 16*(0.00000000,0.00000000),
+ D2= 16*(0.00000000,0.00000000),
+ D3= 16*(0.00000000,0.00000000),
+ D4= 16*(0.00000000,0.00000000),
+ D_GAP= 32*5.00000007E-02  ,
+ D_XROT= 16*0.00000000      ,
+ D_STRENGTH= 16*0.00000000      ,
+ D_RADIUS= 16*0.00000000      ,
+ D_XOFF= 16*0.00000000      ,
+ D_YOFF= 16*0.00000000      ,
+ D_ZOFF= 16*0.00000000      ,
+ /
